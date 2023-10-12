@@ -1,0 +1,15 @@
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\bin\Debug\net6.0\TerrisV00.exe
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\bin\Debug\net6.0\TerrisV00.deps.json
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\bin\Debug\net6.0\TerrisV00.runtimeconfig.json
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\bin\Debug\net6.0\TerrisV00.dll
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\bin\Debug\net6.0\TerrisV00.pdb
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\TerrisV00.csproj.AssemblyReference.cache
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\TerrisV00.GeneratedMSBuildEditorConfig.editorconfig
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\TerrisV00.AssemblyInfoInputs.cache
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\TerrisV00.AssemblyInfo.cs
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\TerrisV00.csproj.CoreCompileInputs.cache
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\TerrisV00.dll
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\refint\TerrisV00.dll
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\TerrisV00.pdb
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\TerrisV00.genruntimeconfig.cache
+P:\IT\GameDevProjects\AsciiTetrisV00\TerrisV00\obj\Debug\net6.0\ref\TerrisV00.dll
