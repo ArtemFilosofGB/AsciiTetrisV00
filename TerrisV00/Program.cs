@@ -17,8 +17,11 @@ class TetrisGame
     private static int currentX = FieldWidth / 2;//координаты курсора
     private static int currentY = 0;
 
+    private static int timeCount = 0;
+
     static int[,] CurrentShape = new int[4, 4]; //вид игрового кубика
     static int Score = 0;
+    static string consoleLine = "ASCII Tetris";
 
     static void Main(string[] args)
     {
@@ -33,7 +36,11 @@ class TetrisGame
         while (isRunning)
         {
             ResetShape();//v0.2
+            FillFrame();
             DrawMatrix();
+            //PrintMatrix(matrix);
+
+
             ConsoleKeyInfo keyInfo = GetInput();
 
             switch (keyInfo.Key)
@@ -58,14 +65,40 @@ class TetrisGame
                     isRunning = false;
                     break;
             }
-        }
+
+            // GameTimer();//Счётчик времени
+        }//end  while (isRunning)
 
         Console.WriteLine("Игра окончена!");
         Console.WriteLine("Счёт игры: " + Score);
+
         Console.ReadLine();
     }
     //~~~~~~~~~~~~~~~~~~~~~~Конец main основной программы~~~~~~~~~~~~~~~~~~~~~~~~
 
+    static void FillFrame()
+    {
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                matrix[0, j] = 2;
+                matrix[i, 0] = 2;
+                matrix[i, matrix.GetLength(1) - 1] = 2;
+                matrix[matrix.GetLength(0) - 1, j] = 2;
+            }
+
+
+        }
+    }
+    static void GameTimer()
+    {
+        //Console.WriteLine("Counter: " + timeCount);
+        //consoleLine = consoleLine + Convert.ToString(timeCount); 
+        Thread.Sleep(500);
+        timeCount++;
+
+    }
     //================переключатель фигур
     static void ResetShape()
     {
@@ -128,7 +161,17 @@ class TetrisGame
         }
     }
     //=============конец переключатель фигур========
-
+    private static void PrintMatrix(int[,] matrix) //Метод, который выводит двумерный массив в консоль
+    {
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                Console.Write(matrix[i, j]);
+            }
+            Console.WriteLine();
+        }
+    }
     private static void DrawMatrix()
     {
         Console.Clear();
@@ -139,18 +182,31 @@ class TetrisGame
             {
                 if (i == currentY && j == currentX)
                 {
+                   // matrix[i,j]=1;
                     Console.Write("X");
                 }
-                else
+
+                switch (matrix[i, j])
                 {
-                    if (i==0 || j==0 || i==matrix.GetLength(0)-1 || j==matrix.GetLength(1)-1)
-                    {
-                         Console.Write("█");
-                    }
-                    else
-                    // Console.WriteLine(".");
-                    Console.Write(matrix[i, j]);
+                    case 0:
+                        Console.Write(" "); //фон
+                        break;
+
+                    case 1:
+                        Console.Write("X"); //курсор
+                        break;
+
+                    case 2:
+                        Console.Write("█");//рамка
+                        break;
+
+                    default:
+                        Console.Write("▄");
+                        break;
                 }
+
+                //=========?
+
             }
 
             Console.WriteLine();
@@ -159,7 +215,7 @@ class TetrisGame
 
     private static ConsoleKeyInfo GetInput()
     {
-        Console.Write("ASCII Tetris Ввод: ");
+        Console.Write($"=ASCII Tetris= Для выхода нажми q + enter. Таймер:{Convert.ToString(timeCount)} Ввод: {currentX}: {currentY}");
         ConsoleKeyInfo keyInfo = Console.ReadKey();
         Console.WriteLine($"");
         Console.WriteLine();
